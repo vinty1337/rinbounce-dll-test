@@ -8,12 +8,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Fix broken APT mirrors (optional but recommended)
-      run: |
-        sudo rm -f /etc/apt/apt-mirrors.txt
-        sudo sed -i 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list
-        sudo apt-get update
-
     - name: Install MinGW x86-64 compiler
       run: sudo apt install -y g++-mingw-w64-x86-64
 
